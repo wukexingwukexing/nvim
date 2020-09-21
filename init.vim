@@ -127,8 +127,8 @@ let g:terminal_color_14 = '#9AEDFE'
 " === Basic Mappings
 " ===
 " Set <LEADER> as <SPACE>, ; as :
-let mapleader=" "
-noremap ; :
+" let mapleader=" "
+" noremap ; :
 
 " Save & quit
 map W :w<CR>
