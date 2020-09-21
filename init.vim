@@ -157,17 +157,17 @@ nnoremap < <<
 nnoremap > >>
 
 " Search
-noremap <LEADER><CR> :nohlsearch<CR>
+noremap <Space><CR> :nohlsearch<CR>
 
 " Adjacent duplicate words
-noremap <LEADER>dw /\(\<\w\+\>\)\_s*\1
+noremap <Space>dw /\(\<\w\+\>\)\_s*\1
 
 " Space to Tab
-nnoremap <LEADER>tt :%s/    /\t/g
-vnoremap <LEADER>tt :s/    /\t/g
+nnoremap <Space>tt :%s/    /\t/g
+vnoremap <Space>tt :s/    /\t/g
 
 " Folding
-noremap <silent> <LEADER>o za
+noremap <silent> <Space>o za
 
 " Open up lazygit
 noremap \g :Git 
@@ -233,21 +233,21 @@ cnoremap <M-w> <S-Right>
 
 
 " ===
-" === Searching
+" === Searching (Edited)
 " ===
-noremap - N
-noremap = n
+noremap - nzz 
+noremap = Nzz
 
 
 " ===
 " === Window management
 " ===
 " Use <space> + new arrow keys for moving the cursor around windows
-noremap <LEADER>w <C-w>w
-noremap <LEADER>u <C-w>k
-noremap <LEADER>e <C-w>j
-noremap <LEADER>n <C-w>h
-noremap <LEADER>i <C-w>l
+map <Space>w        <C-w>w
+map <Space><Right>  <C-w>l
+map <Space><Left>   <C-w>h
+map <Space><Up>     <C-w>k
+map <Space><Down>   <C-w>j
 
 " Disable the default s key
 noremap s <nop>
