@@ -5,6 +5,7 @@
 "|_|  |_| |_|   |_| \_|  \_/  |___|_|  |_|_| \_\\____|
 
 " Author: @theniceboy
+" Edited by @wukexingwukexing 
 
 " Checkout-list
 " vim-esearch
@@ -48,7 +49,7 @@ set autochdir
 " === Editor behavior
 " ===
 set number
-set relativenumber
+" set relativenumber
 set cursorline
 set hidden
 set noexpandtab
@@ -130,19 +131,20 @@ let mapleader=" "
 noremap ; :
 
 " Save & quit
-noremap Q :q<CR>
-noremap <C-q> :qa<CR>
-noremap S :w<CR>
+map W :w<CR>
+map Q :q!<CR>
+map S :wq<CR>
+map R :source $MYVIMRC<CR>
 
 " Open the vimrc file anytime
 noremap <LEADER>rc :e ~/.config/nvim/init.vim<CR>
 
-" Undo operations
-noremap l u
+" Undo operations (Edited)
+" noremap l u
 
-" Insert Key
-noremap k i
-noremap K I
+" Insert Key (Edited)
+" noremap k i
+" noremap K I
 
 " make Y to copy till the end of the line
 nnoremap Y y$
@@ -174,7 +176,7 @@ noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>
 
 
 " ===
-" === Cursor Movement
+" === Cursor Movement (Edited)
 " ===
 " New cursor movement (the default arrow keys are used for resizing windows)
 "     ^
@@ -182,21 +184,20 @@ noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>
 " < n   i >
 "     e
 "     v
-noremap <silent> u k
-noremap <silent> n h
-noremap <silent> e j
-noremap <silent> i l
-noremap <silent> gu gk
-noremap <silent> ge gj
-
+" noremap <silent> u k
+" noremap <silent> n h
+" noremap <silent> e j
+" noremap <silent> i l
+" noremap <silent> gu gk
+" noremap <silent> ge gj
 " U/E keys for 5 times u/e (faster navigation)
-noremap <silent> U 5k
-noremap <silent> E 5j
+noremap <silent> K 5k
+noremap <silent> J 5j
 
 " N key: go to the start of the line
 noremap <silent> N 0
 " I key: go to the end of the line
-noremap <silent> I $
+noremap <silent> M $
 
 " Faster in-line navigation
 noremap W 5w
@@ -251,11 +252,11 @@ noremap <LEADER>i <C-w>l
 " Disable the default s key
 noremap s <nop>
 
-" split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
-noremap su :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
-noremap se :set splitbelow<CR>:split<CR>
-noremap sn :set nosplitright<CR>:vsplit<CR>:set splitright<CR>
-noremap si :set splitright<CR>:vsplit<CR>
+" split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)  (Edited)
+map s<Right>   :set splitright<CR>:vsplit<CR>
+map s<Left>    :set nosplitright<CR>:vsplit<CR>
+map s<Up>      :set nosplitbelow<CR>:split<CR>
+map s<Down>    :set splitbelow<CR>:split<CR>
 
 " Resize splits with arrow keys
 noremap <up> :res +5<CR>
@@ -313,8 +314,11 @@ noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
 " Press space twice to jump to the next '<++>' and edit it
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
-" Spelling Check with <space>sc
-noremap <LEADER>sc :set spell!<CR>
+" Spelling Check with <Alt+s>
+map <A-s> :set spell!<CR>             "open or close spelling check
+
+" relative number with <F2>
+map <F2> :set relativenumber!<CR>     "open or close relativenumber
 
 " Press ` to change case (instead of ~)
 noremap ` ~
